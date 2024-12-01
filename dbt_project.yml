@@ -8,5 +8,4 @@ name: 'cis9440_project'
 models:
   cis9440_project:
     +materialized: table
-    example:
-      +materialized: view
+    
