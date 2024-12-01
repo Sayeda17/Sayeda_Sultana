@@ -42,7 +42,7 @@ unique_location_ids AS (
 -- Final location dimension
 SELECT 
     location_dim_id,
-    city_borough AS borough,
+    city_borough,
     community_board,
     zipcode,
     street_address,
