@@ -7,7 +7,7 @@ WITH combined_location_data AS (
     -- Extract data from FoodEstablishment dataset
     SELECT DISTINCT
         location_type,
-        borough AS city_borough,
+        UPPER(borough) AS city_borough,
         community_board,
         street_name AS street_address,
         incident_zip AS zipcode
@@ -19,7 +19,7 @@ WITH combined_location_data AS (
     -- Extract data from RestaurantInspection dataset
     SELECT DISTINCT
         inspection_type AS location_type,
-        boro AS city_borough,
+        UPPER(boro) AS city_borough,
         community_board,
         street AS street_address,
         zipcode
