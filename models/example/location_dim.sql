@@ -42,19 +42,12 @@ unique_location_ids AS (
 -- Final location dimension
 SELECT 
     location_dim_id,
-    location_type,
     city_borough AS borough,
     community_board,
     zipcode,
     street_address,
     -- Categorize location types into broader categories
-    CASE 
-        WHEN location_type IN ('Cafeteria - College/University', 'Cafeteria - Private School', 'Cafeteria - Public School') THEN 'Educational'
-        WHEN location_type IN ('Food Cart Vendor', 'Mobile Food Vendor', 'Street Vendor', 'Street Fair Vendor') THEN 'Mobile Service'
-        WHEN location_type IN ('Restaurant', 'Restaurant/Bar/Deli/Bakery') THEN 'Restaurant'
-        WHEN location_type IN ('Catering Service', 'Catering Hall') THEN 'Catering'
-        ELSE 'Other'
-    END AS location_category
+
 FROM unique_location_ids
 
 
