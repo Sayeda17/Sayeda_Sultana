@@ -1,5 +1,10 @@
 -- models/location_dimension.sql
-{{ config(materialized="table") }}
+
+{{
+  config(
+    materialized='table'
+  )
+}}
 
 
 WITH combined_location_data AS (
